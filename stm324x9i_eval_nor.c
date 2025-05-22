@@ -80,15 +80,15 @@ static FMC_NORSRAM_TimingTypeDef Timing;
   * @retval NOR memory status
   */
 uint8_t BSP_NOR_Init(void)
-{ 
+{
   norHandle.Instance  = FMC_NORSRAM_DEVICE;
   norHandle.Extended  = FMC_NORSRAM_EXTENDED_DEVICE;
-  
-  /* NOR device configuration */  
-  Timing.AddressSetupTime      = 4;
+
+  /* NOR device configuration */
+  Timing.AddressSetupTime      = 8;
   Timing.AddressHoldTime       = 3;
-  Timing.DataSetupTime         = 7;
-  Timing.BusTurnAroundDuration = 1;
+  Timing.DataSetupTime         = 9;
+  Timing.BusTurnAroundDuration = 0;
   Timing.CLKDivision           = 2;
   Timing.DataLatency           = 2;
   Timing.AccessMode            = FMC_ACCESS_MODE_A;
